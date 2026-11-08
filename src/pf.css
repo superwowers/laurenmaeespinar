@@ -254,3 +254,27 @@ pre{overflow-wrap:anywhere}
 .cico{width:38px;height:38px;border-radius:12px;background:var(--chip);display:grid;place-items:center;flex:none}
 .cico svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 @media (max-width:600px){.socials{grid-template-columns:minmax(0,1fr)}}
+
+/* ---------- Mobile: flat photo grid instead of the sideways 3D strip, tidy Gmail row ---------- */
+@media (max-width:900px){
+  .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible;margin:14px 0 0}
+  .gi,.gi.wide{flex:none !important;min-width:0}
+  .gi.wide{grid-column:1 / -1}
+  .gbox{height:auto;display:block}
+  .gp{width:100%;height:190px;transform:none;border-radius:16px}
+  .gi.wide .gp{height:170px}
+  .gl{margin-top:8px}
+  .mail{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px}
+  .mail .grow{min-width:0}
+  .mail .rv{font-size:12px;overflow-wrap:anywhere}
+  .mail .btn{grid-column:1 / -1;width:100%;text-align:center;justify-content:center;box-sizing:border-box}
+  .mail .btn + .btn{margin-top:-4px}
+}
+@media (max-width:900px){
+  .gi:first-child{grid-column:1 / -1}
+  .gi:first-child .gp{height:300px}
+  .gp{width:100%;margin:0}
+}
+@media (max-width:900px){
+  .gi:hover .gp,.gi.on .gp{transform:none;box-shadow:0 10px 24px var(--shadow)}
+}
