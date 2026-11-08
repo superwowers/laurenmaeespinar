@@ -149,7 +149,7 @@ export const projectSlides = [
     role: 'Sole developer: design, frontend, backend and database.',
     stack: [
       ['Frontend', 'React 18 · TypeScript · Vite · Three.js · Tailwind CSS'],
-      ['Backend', 'Python 3.11 · FastAPI · SQLAlchemy · SQLite'],
+      ['Backend', 'Python 3.11 · FastAPI · SQLAlchemy · MySQL'],
       ['Vision', 'MediaPipe pose (33 landmarks)'],
       ['Delivery', 'Docker Compose'],
     ],
@@ -161,7 +161,7 @@ export const projectSlides = [
 export const techStack = [
   { name: 'Backend', note: 'Server-side languages and frameworks', items: [['PHP', 'Language'], ['Laravel', 'Framework'], ['Python', 'Language'], ['FastAPI', 'Framework'], ['Pydantic', 'Validation library']] },
   { name: 'Frontend', note: 'Interfaces and 3D', items: [['React', 'Library'], ['TypeScript', 'Language'], ['JavaScript', 'Language'], ['Vite', 'Build tool'], ['Tailwind CSS', 'Styling'], ['Three.js', '3D graphics']] },
-  { name: 'Database', note: 'Data storage', items: [['MySQL', 'Relational database'], ['SQLite', 'Embedded database'], ['SQLAlchemy', 'ORM']] },
+  { name: 'Database', note: 'Data storage', items: [['MySQL', 'Relational database'], ['SQLAlchemy', 'ORM']] },
   { name: 'AI integration', note: 'Generative AI, voice and vision', items: [['Google Gemini API', 'Generative AI'], ['Speech-to-text and text-to-speech', 'Voice'], ['MediaPipe', 'Pose estimation']] },
   { name: 'QA & testing', note: 'Testing and code quality', items: [['PHPUnit', 'PHP testing'], ['Vitest', 'JavaScript testing'], ['ESLint', 'Linting'], ['Laravel Pint', 'Code style'], ['Manual testing', 'Hands-on QA of every release']] },
   { name: 'AI tools', note: 'How I work with AI', items: [['Claude', 'AI assistant'], ['Antigravity', 'AI coding agent']] },
