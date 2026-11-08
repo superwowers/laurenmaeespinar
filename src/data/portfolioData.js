@@ -12,7 +12,7 @@ export const personalInfo = {
   headline: ['AI-integration web developer', 'full-stack', 'QA tester'],
   tags: ['AI integration', 'Full-stack', 'QA tester', 'Team lead'],
   intro:
-    'Team lead of the ACES LMS thesis project, responsible for its backend, database and AI features, and for quality assurance. Sole developer of FitWise, an AI-powered virtual fitting room, from frontend to backend.',
+    'I build web apps that think. Full-stack with React, Laravel and FastAPI, I weave AI into real products, then test them by hand until they hold up.',
   facts: [
     { label: 'Thesis project', value: 'ACES LMS', detail: 'Team lead · backend, database, AI, QA' },
     { label: 'Sole developer', value: 'FitWise', detail: 'Frontend, backend and database' },
