@@ -1,8 +1,8 @@
-# laurenmae
+# laurenmaeespinar
 
 Portfolio of Lauren Mae Espinar: AI-integration web developer, full-stack developer and QA tester.
 
-Live site: https://superwowers.github.io/
+Live site: https://superwowers.github.io/laurenmaeespinar/
 
 ## Stack
 
@@ -32,7 +32,7 @@ To change any content (projects, tech stack, captions, links), edit `src/data/po
 
 ## Deployment
 
-The site is hosted on GitHub Pages from the `gh-pages` branch of `superwowers/superwowers.github.io`.
+The site is hosted on GitHub Pages from the `gh-pages` branch of `superwowers/laurenmaeespinar`.
 
 ```bash
 npm run deploy   # builds the site and publishes dist/ to gh-pages

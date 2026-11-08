@@ -6,7 +6,7 @@ export default function Hero({ onNavigate }) {
   return (
     <section id="home" className="hero2">
       <div className="avatar">
-        <img src="/images/me-shades.jpg" alt={personalInfo.name} />
+        <img src={`${import.meta.env.BASE_URL}images/me-shades.jpg`} alt={personalInfo.name} />
       </div>
       <span className="status">
         <i></i>

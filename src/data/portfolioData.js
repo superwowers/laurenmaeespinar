@@ -1,3 +1,4 @@
+const B = import.meta.env.BASE_URL;
 export const LINKS = {
   github: 'https://github.com/superwowers',
   linkedin: 'https://www.linkedin.com/in/lauren-mae-espinar-1338b1440',
@@ -16,7 +17,7 @@ export const personalInfo = {
     { label: 'Thesis project', value: 'ACES LMS', detail: 'Team lead · backend, database, AI, QA' },
     { label: 'Sole developer', value: 'FitWise', detail: 'Frontend, backend and database' },
     { label: 'Database', value: 'MySQL', detail: 'Complete ACES schema design' },
-    { label: 'Works with AI', value: 'Claude · Antigravity', detail: 'AI-assisted development (agy)' },
+    { label: 'Works with AI', value: 'Claude · Antigravity', detail: 'AI-assisted development' },
   ],
 };
 
@@ -57,7 +58,7 @@ export const howItWorks = [
     ],
     snippet:
       'input:    lesson text + quiz type + number of questions\noutput:   draft questions for the teacher to review\ncontrols: daily limit for each teacher, and an on/off switch for the system admin',
-    image: { src: '/images/aces-quiz-ai.jpg', caption: 'The teacher portal: Generate with AI' },
+    image: { src: B + 'images/aces-quiz-ai.jpg', caption: 'The teacher portal: Generate with AI' },
   },
   {
     id: 'interrogation',
@@ -71,7 +72,7 @@ export const howItWorks = [
     ],
     snippet:
       'access: criminology students only\nmodes:  chat, or voice (speech-to-text in, text-to-speech out)\nscore:  technique + correct suspect + written reasoning\ncontrols: daily limit for each student, and an on/off switch for the system admin',
-    image: { src: '/images/aces-interrogation.jpg', caption: 'The student portal: case type, language and mode' },
+    image: { src: B + 'images/aces-interrogation.jpg', caption: 'The student portal: case type, language and mode' },
   },
   {
     id: 'fitwise',
@@ -86,14 +87,14 @@ export const howItWorks = [
     ],
     snippet:
       'scale   = height_cm / skeleton_height_px\nease    = garment_dimension - body_dimension\noptimal = +4 to +8 cm   relaxed > +10 cm   tight < +2 cm',
-    image: { src: '/images/fitwise.jpg', caption: 'FitWise: the virtual fitting room' },
+    image: { src: B + 'images/fitwise.jpg', caption: 'FitWise: the virtual fitting room' },
   },
 ];
 
 /* ---------- Projects (laptop carousel) ---------- */
 export const projectSlides = [
   {
-    image: '/images/aces-home.jpg',
+    image: B + 'images/aces-home.jpg',
     alt: 'ACES landing page',
     title: 'ACES LMS',
     badges: ['Thesis project', '4 role portals'],
@@ -104,12 +105,12 @@ export const projectSlides = [
       ['Backend', 'PHP 8.5 · Laravel 12 · MySQL 8'],
       ['AI', 'Google Gemini · speech-to-text / text-to-speech'],
       ['Frontend', 'React 19 · Vite · Tailwind CSS (developed with teammates)'],
-      ['Quality', 'PHPUnit · Vitest · ESLint · Laravel Pint · GitHub Actions CI'],
+      ['Quality', 'PHPUnit · Vitest · ESLint · Laravel Pint · Manual testing'],
     ],
     links: [{ label: 'Live site ↗', href: LINKS.acesLive }],
   },
   {
-    image: '/images/aces-quiz-ai.jpg',
+    image: B + 'images/aces-quiz-ai.jpg',
     alt: 'AI quiz generator',
     title: 'ACES · AI quiz generator',
     badges: ['AI', 'Teacher portal'],
@@ -124,7 +125,7 @@ export const projectSlides = [
     links: [{ label: 'Live site ↗', href: LINKS.acesLive }],
   },
   {
-    image: '/images/aces-interrogation.jpg',
+    image: B + 'images/aces-interrogation.jpg',
     alt: 'AI suspect interrogation',
     title: 'ACES · AI suspect interrogation',
     badges: ['AI', 'Student portal'],
@@ -139,7 +140,7 @@ export const projectSlides = [
     links: [{ label: 'Live site ↗', href: LINKS.acesLive }],
   },
   {
-    image: '/images/fitwise.jpg',
+    image: B + 'images/fitwise.jpg',
     alt: 'FitWise',
     title: 'FitWise · Virtual fitting room',
     badges: ['Sole developer', 'SDG 12'],
@@ -162,16 +163,16 @@ export const techStack = [
   { name: 'Frontend', note: 'Interfaces and 3D', items: [['React', 'Library'], ['TypeScript', 'Language'], ['JavaScript', 'Language'], ['Vite', 'Build tool'], ['Tailwind CSS', 'Styling'], ['Three.js', '3D graphics']] },
   { name: 'Database', note: 'Data storage', items: [['MySQL', 'Relational database'], ['SQLite', 'Embedded database'], ['SQLAlchemy', 'ORM']] },
   { name: 'AI integration', note: 'Generative AI, voice and vision', items: [['Google Gemini API', 'Generative AI'], ['Speech-to-text and text-to-speech', 'Voice'], ['MediaPipe', 'Pose estimation']] },
-  { name: 'QA & testing', note: 'Testing and code quality', items: [['PHPUnit', 'PHP testing'], ['Vitest', 'JavaScript testing'], ['ESLint', 'Linting'], ['Laravel Pint', 'Code style'], ['GitHub Actions', 'Continuous integration']] },
-  { name: 'AI tools', note: 'How I work with AI', items: [['Claude', 'AI assistant'], ['Antigravity (agy)', 'AI coding agent']] },
+  { name: 'QA & testing', note: 'Testing and code quality', items: [['PHPUnit', 'PHP testing'], ['Vitest', 'JavaScript testing'], ['ESLint', 'Linting'], ['Laravel Pint', 'Code style'], ['Manual testing', 'Hands-on QA of every release']] },
+  { name: 'AI tools', note: 'How I work with AI', items: [['Claude', 'AI assistant'], ['Antigravity', 'AI coding agent']] },
 ];
 
 /* ---------- About gallery ---------- */
 export const gallery = [
-  { src: '/images/beach.jpg', title: "Hi, I'm Lauren", caption: 'Full-stack developer from the Philippines.', h: 280, ry: 26, pos: '42% center' },
-  { src: '/images/hirono.jpg', title: 'Hirono', caption: 'Hirono is my stress reliever.', h: 190, ry: 20, pos: 'center', w: 2.3 },
-  { src: '/images/cooking.jpg', title: 'Cooking', caption: 'I love cooking, especially seafood dishes.', h: 160, ry: 10, pos: 'center 45%' },
-  { src: '/images/dog-selfie.jpg', title: 'Dogs', caption: 'Dogs are my favorite company.', h: 160, ry: -10, pos: 'center 35%' },
-  { src: '/images/husky.jpg', title: 'Photography', caption: 'I enjoy photographing nature and animals.', h: 220, ry: -20, pos: 'center' },
-  { src: '/images/cows.jpg', title: 'Quiet views', caption: 'Slow afternoons in the countryside.', h: 280, ry: -26, pos: 'center 60%' },
+  { src: B + 'images/beach.jpg', title: "Hi, I'm Lauren", caption: 'Full-stack developer from the Philippines.', h: 280, ry: 26, pos: '42% center' },
+  { src: B + 'images/hirono.jpg', title: 'Hirono', caption: 'Hirono is my stress reliever.', h: 190, ry: 20, pos: 'center', w: 2.3 },
+  { src: B + 'images/cooking.jpg', title: 'Cooking', caption: 'I love cooking, especially seafood dishes.', h: 160, ry: 10, pos: 'center 45%' },
+  { src: B + 'images/dog-selfie.jpg', title: 'Dogs', caption: 'Dogs are my favorite company.', h: 160, ry: -10, pos: 'center 35%' },
+  { src: B + 'images/husky.jpg', title: 'Photography', caption: 'I enjoy photographing nature and animals.', h: 220, ry: -20, pos: 'center' },
+  { src: B + 'images/cows.jpg', title: 'Quiet views', caption: 'Slow afternoons in the countryside.', h: 280, ry: -26, pos: 'center 60%' },
 ];

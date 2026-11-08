@@ -22,7 +22,7 @@ try {
   run('git add -A');
   run(`git -c user.name="${name}" -c user.email="${email}" commit -q -m "Deploy site"`);
   run(`git push -f ${remoteUrl} gh-pages`);
-  console.log('\nPublished: https://superwowers.github.io/ (updates in about a minute)');
+  console.log('\nPublished: https://superwowers.github.io/laurenmaeespinar/ (updates in about a minute)');
 } finally {
   rmSync(tmp, { recursive: true, force: true });
 }
