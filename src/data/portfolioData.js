@@ -8,15 +8,15 @@ export const LINKS = {
 
 export const personalInfo = {
   name: 'Lauren Mae Espinar',
-  status: 'Available for engineering roles & technical collaborations',
-  headline: ['AI-integration web developer', 'full-stack', 'QA tester'],
-  tags: ['AI integration', 'Full-stack', 'QA tester', 'Team lead'],
+  status: '4th-year BSCS student · open to internships & junior roles',
+  headline: ['Aspiring AI-integration web developer', 'full-stack', 'system analyst', 'QA tester'],
+  tags: ['AI integration', 'Full-stack', 'System analysis', 'QA tester', 'Team lead'],
   intro:
     'I build web apps that think. Full-stack with React, Laravel and FastAPI, I weave AI into real products, then test them by hand until they hold up.',
   facts: [
     { label: 'Thesis project', value: 'ACES LMS', detail: 'Team lead · backend, database, AI, QA' },
     { label: 'Sole developer', value: 'FitWise', detail: 'Frontend, backend and database' },
-    { label: 'Database', value: 'MySQL', detail: 'Complete ACES schema design' },
+    { label: 'Education', value: 'BS Computer Science', detail: '4th year · STI College Lucena' },
     { label: 'Works with AI', value: 'Claude · Antigravity', detail: 'AI-assisted development' },
   ],
 };
@@ -169,7 +169,7 @@ export const techStack = [
 
 /* ---------- About gallery ---------- */
 export const gallery = [
-  { src: B + 'images/beach.jpg', title: "Hi, I'm Lauren", caption: 'Full-stack developer from the Philippines.', h: 280, ry: 26, pos: '42% center' },
+  { src: B + 'images/beach.jpg', title: "Hi, I'm Lauren", caption: 'Aspiring full-stack developer and 4th-year BSCS student from the Philippines.', h: 280, ry: 26, pos: '42% center' },
   { src: B + 'images/hirono.jpg', title: 'Hirono', caption: 'Hirono is my stress reliever.', h: 190, ry: 20, pos: 'center', w: 2.3 },
   { src: B + 'images/cooking.jpg', title: 'Cooking', caption: 'I love cooking, especially seafood dishes.', h: 160, ry: 10, pos: 'center 45%' },
   { src: B + 'images/dog-selfie.jpg', title: 'Dogs', caption: 'Dogs are my favorite company.', h: 160, ry: -10, pos: 'center 35%' },

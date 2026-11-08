@@ -34,7 +34,7 @@ export default function Contact() {
         <div>
           <h2>Let's build something durable together.</h2>
           <p className="lead">
-            Hiring a full-stack developer, adding AI to your product, or collaborating on a project? Let's talk.
+            Offering an internship or junior role, adding AI to your product, or collaborating on a project? Let's talk.
           </p>
           <div className="card row-card">
             <div>
