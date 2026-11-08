@@ -3,7 +3,9 @@ export const LINKS = {
   github: 'https://github.com/superwowers',
   linkedin: 'https://www.linkedin.com/in/lauren-mae-espinar-1338b1440',
   acesLive: 'https://aces.lms-edu.app/',
-  email: 'lrnmspnr@gmail.com',
+  email: 'laurenmaeespinar0108@gmail.com',
+  instagram: 'https://www.instagram.com/_laurenmaww/',
+  facebook: 'https://www.facebook.com/laurenmawii',
 };
 
 export const personalInfo = {

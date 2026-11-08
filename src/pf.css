@@ -243,3 +243,14 @@ pre{overflow-wrap:anywhere}
   .tswitch svg{top:6px;width:14px;height:14px}
   .tswitch .sun{right:6px}.tswitch .moon{left:6px}
 }
+
+/* ---------- Contact: icon link cards ---------- */
+.mail{margin-top:14px;flex-wrap:wrap}
+.mail .grow,.social .grow{flex:1;min-width:0}
+.socials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.social{color:inherit;text-decoration:none;transition:transform .2s}
+.social:hover{transform:translateY(-2px)}
+.social .go{color:var(--mute);font-size:14px}
+.cico{width:38px;height:38px;border-radius:12px;background:var(--chip);display:grid;place-items:center;flex:none}
+.cico svg{width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:600px){.socials{grid-template-columns:minmax(0,1fr)}}
