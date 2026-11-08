@@ -32,4 +32,8 @@ To change any content (projects, tech stack, captions, links), edit `src/data/po
 
 ## Deployment
 
-Every push to `main` builds the site and publishes it to GitHub Pages through `.github/workflows/deploy.yml`.
+The site is hosted on GitHub Pages from the `gh-pages` branch of `superwowers/superwowers.github.io`.
+
+```bash
+npm run deploy   # builds the site and publishes dist/ to gh-pages
+```
