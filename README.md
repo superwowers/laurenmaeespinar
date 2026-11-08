@@ -1,50 +1,35 @@
-# Lauren Mae Espinar — Portfolio
+# laurenmae
 
-> Personal developer portfolio showcasing full-stack applications, computer vision systems, and UI/UX design.
+Portfolio of Lauren Mae Espinar: AI-integration web developer, full-stack developer and QA tester.
 
-![React](https://img.shields.io/badge/React-19.0-61dafb?logo=react)
-![Vite](https://img.shields.io/badge/Vite-6.1-646cff?logo=vite)
-![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?logo=tailwindcss)
-![GitHub](https://img.shields.io/badge/GitHub-superwowers-181717?logo=github)
+Live site: https://superwowers.github.io/
 
----
+## Stack
 
-## ⚡ Tech Stack
+React 19, Vite 6 and Tailwind CSS 3, with a hand-written glass-style theme in `src/pf.css`.
 
-- **Frontend**: React 19, Tailwind CSS, Lucide Icons
-- **Build Tool**: Vite
-- **Design Philosophy**: High typographic contrast, dark slate/emerald palette, responsive mobile-first layout
+## Run locally
 
----
-
-## 🛠️ Getting Started
-
-### 1. Install dependencies
 ```bash
 npm install
+npm run dev      # development server
+npm run build    # production build in dist/
+npm run preview  # preview the production build
 ```
 
-### 2. Start local development server
-```bash
-npm run dev
+## Structure
+
+```
+src/
+├── App.jsx                 layout, theme switch, scroll spy
+├── pf.css                  glass theme (light and dark) and responsive rules
+├── data/portfolioData.js   all text, links, projects, tech stack and gallery
+└── components/             Sidebar, Hero, HowItWorks, Projects, TechStack, About, Contact
+public/images/              photos and project screenshots
 ```
 
-### 3. Build for production
-```bash
-npm run build
-```
+To change any content (projects, tech stack, captions, links), edit `src/data/portfolioData.js`.
 
----
+## Deployment
 
-## 📂 Featured Projects in Portfolio
-
-- **FitWise**: AI-Powered Virtual Fitting Room & Anthropometrics (FastAPI, MediaPipe, WebGL, Docker, React)
-- **ACES Portal**: Academic & Enterprise Management Platform (React 19, Express, JWT, Tailwind CSS)
-- **Sari-Sari Store POS**: Offline-first Retail Inventory & Ledger (React, Tailwind CSS)
-- **Café de Placedo**: Coffeehouse ordering & showcase web experience
-
----
-
-## 👤 Author
-
-- **Lauren Mae Espinar** ([@superwowers](https://github.com/superwowers))
+Every push to `main` builds the site and publishes it to GitHub Pages through `.github/workflows/deploy.yml`.

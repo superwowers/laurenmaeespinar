@@ -1,26 +1,80 @@
-import React from 'react';
-import Navbar from './components/Navbar';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
+import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
-import ArchitectureInspector from './components/ArchitectureInspector';
+import HowItWorks from './components/HowItWorks';
 import Projects from './components/Projects';
-import Skills from './components/Skills';
+import TechStack from './components/TechStack';
 import About from './components/About';
 import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { sections } from './data/portfolioData';
+
+const readTheme = () => {
+  try {
+    return localStorage.getItem('pf-theme') === 'dark';
+  } catch {
+    return false;
+  }
+};
 
 export default function App() {
+  const [dark, setDark] = useState(readTheme);
+  const [active, setActive] = useState(sections[0].id);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('pf-theme', dark ? 'dark' : 'light');
+    } catch {
+      /* storage unavailable: theme simply isn't remembered */
+    }
+    document.body.style.background = dark ? '#0a0a0c' : '#dfe3e9';
+  }, [dark]);
+
+  // Scroll spy: works for the inner panel (desktop) and the window (mobile).
+  const spy = useCallback(() => {
+    const content = contentRef.current;
+    if (!content) return;
+    const mobile = window.matchMedia('(max-width: 900px)').matches;
+    const base = mobile ? 90 : content.getBoundingClientRect().top;
+    let current = sections[0].id;
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top - base <= 120) current = id;
+    });
+    const atEnd = mobile
+      ? window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4
+      : content.scrollTop + content.clientHeight >= content.scrollHeight - 4;
+    setActive(atEnd ? sections[sections.length - 1].id : current);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', spy, { passive: true });
+    window.addEventListener('resize', spy);
+    spy();
+    return () => {
+      window.removeEventListener('scroll', spy);
+      window.removeEventListener('resize', spy);
+    };
+  }, [spy]);
+
+  const go = useCallback((id) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, []);
+
   return (
-    <div className="min-h-[100dvh] bg-[#F5E9E5] dark:bg-[#2F171F] text-[#3A1E26] dark:text-[#FDF7F5] transition-colors duration-200 flex flex-col selection:bg-[#BF5670] selection:text-white">
-      <Navbar />
-      <main className="flex-grow">
-        <Hero />
-        <ArchitectureInspector />
-        <Projects />
-        <Skills />
-        <About />
-        <Contact />
-      </main>
-      <Footer />
+    <div className={`pf${dark ? ' dark' : ''}`}>
+      <div className="shell">
+        <Sidebar active={active} dark={dark} onNavigate={go} onToggleTheme={() => setDark((d) => !d)} />
+        <main className="content" ref={contentRef} onScroll={spy}>
+          <Hero onNavigate={go} />
+          <HowItWorks />
+          <Projects />
+          <TechStack />
+          <About />
+          <Contact />
+          <footer>© Lauren Mae Espinar</footer>
+        </main>
+      </div>
     </div>
   );
 }

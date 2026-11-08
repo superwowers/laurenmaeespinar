@@ -2,72 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  body {
-    @apply font-sans antialiased text-[#3A1E26] dark:text-[#FDF7F5] bg-[#F5E9E5] dark:bg-[#2F171F];
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
-  }
-
-  ::selection {
-    background-color: #BF5670;
-    color: #ffffff;
-  }
-
-  /* Taste-Skill Law: Headlines two lines or fewer, tight confident leading */
-  h1, h2, h3, h4 {
-    letter-spacing: -0.025em;
-  }
+html,
+body {
+  margin: 0;
+  background: #dfe3e9;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-/* Subtle, polished scrollbars */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #EDE0DC;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #261219;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #D9BBAF;
-  border-radius: 4px;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #734652;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #BF5670;
-}
-
-/* Code block formatting */
-pre, code, .font-mono {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-feature-settings: "tnum" 1;
-}
-
-/* Taste-Skill: Surfaces separated by tone step, feedback only on hover/active */
-.interactive-surface {
-  transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
-}
-
-.interactive-surface:hover {
-  border-color: #BF5670 !important;
-}
-
-.interactive-surface:active {
-  transform: scale(0.99);
+::selection {
+  background: #0b0b0d;
+  color: #fff;
 }
