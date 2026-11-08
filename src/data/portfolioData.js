@@ -100,7 +100,7 @@ export const projectSlides = [
     badges: ['Thesis project', '4 role portals'],
     description:
       'Learning management system for a college: enrollment per semester, lessons, quizzes, a multi-step grade approval flow and permanent academic records.',
-    role: 'Team leader. Developed the backend and the complete database, led quality assurance, implemented the admin semester rollover (1st to 2nd semester), and contributed to the frontend alongside teammates.',
+    role: 'Team leader and system analyst. Designed the enrollment process around bulk upload and the grading workflow, developed the backend and the complete database, led quality assurance, implemented the admin semester rollover (1st to 2nd semester), and contributed to the frontend alongside teammates.',
     stack: [
       ['Backend', 'PHP 8.5 · Laravel 12 · MySQL 8'],
       ['AI', 'Google Gemini · speech-to-text / text-to-speech'],
