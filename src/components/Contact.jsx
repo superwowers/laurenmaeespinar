@@ -69,7 +69,12 @@ export default function Contact() {
           <small>Gmail</small>
           <div className="rv">{LINKS.email}</div>
         </div>
-        <a className="btn" href={`mailto:${LINKS.email}`}>
+        <a
+          className="btn"
+          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${LINKS.email}&su=${encodeURIComponent('Hello Lauren')}`}
+          target="_blank"
+          rel="noreferrer"
+        >
           Send email ↗
         </a>
         <button type="button" className="btn g" onClick={copyEmail}>
