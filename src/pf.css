@@ -290,3 +290,11 @@ pre{overflow-wrap:anywhere}
   .step:last-child::after{display:none}
   .step b{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:13px}
 }
+
+/* ---------- Light mode: selected tab and content share one solid color (same as dark mode) ---------- */
+.pf:not(.dark){--L:#fafbfc}
+
+/* ---------- Light mode: slightly darker sidebar so the white selected tab stands out ---------- */
+@media (min-width:901px){
+  .pf:not(.dark) .side{background:rgba(20,22,26,.09)}
+}
