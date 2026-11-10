@@ -315,3 +315,9 @@ pre{overflow-wrap:anywhere}
 @media (min-width:901px){
   .pf:not(.dark) .side{background:rgba(20,22,26,.09)}
 }
+
+@keyframes arrive{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+section.arrive>*{animation:arrive .6s cubic-bezier(.22,.8,.3,1) both}
+section.arrive>*:nth-child(2){animation-delay:.06s}
+section.arrive>*:nth-child(3){animation-delay:.12s}
+section.arrive>*:nth-child(n+4){animation-delay:.18s}

@@ -59,8 +59,14 @@ export default function App() {
     };
   }, [spy]);
 
+  // Smooth-scroll to the section, then replay a short arrival animation on it.
   const go = useCallback((id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    el.classList.remove('arrive');
+    void el.offsetWidth;
+    el.classList.add('arrive');
   }, []);
 
   return (
