@@ -28,7 +28,9 @@ export default function Sidebar({ active, dark, onNavigate, onToggleTheme }) {
   return (
     <aside className="side">
       <div className="logo">
-        <i>L</i>
+        <i>
+          <img src={`${import.meta.env.BASE_URL}favicon.png`} alt="" />
+        </i>
       </div>
       {sections.map(({ id, label }) => (
         <button

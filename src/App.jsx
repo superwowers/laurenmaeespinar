@@ -5,6 +5,7 @@ import Projects from './components/Projects';
 import TechStack from './components/TechStack';
 import Roles from './components/Roles';
 import GithubCalendar from './components/GithubCalendar';
+import Education from './components/Education';
 import About from './components/About';
 import Contact from './components/Contact';
 import { sections } from './data/portfolioData';
@@ -72,6 +73,7 @@ export default function App() {
           <Roles />
           <TechStack />
           <GithubCalendar />
+          <Education />
           <About />
           <Contact />
           <footer>© Lauren Mae Espinar</footer>

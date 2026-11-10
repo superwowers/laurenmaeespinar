@@ -200,3 +200,9 @@ export const gallery = [
   { src: B + 'images/husky.jpg', title: 'Photography', caption: 'I enjoy photographing nature and animals.', h: 220, ry: -20, pos: 'center' },
   { src: B + 'images/cows.jpg', title: 'Quiet views', caption: 'Slow afternoons in the countryside.', h: 280, ry: -26, pos: 'center 60%' },
 ];
+
+/* ---------- Education & events ---------- */
+export const education = [
+  { name: 'BS Computer Science', what: 'STI College Lucena. Currently in 4th year.', where: 'Expected graduation · July 2027' },
+  { name: 'Tagisan ng Talino CodeFest', what: 'Joined with my team as a participant.', where: 'Hackathon · March 2026' },
+];
