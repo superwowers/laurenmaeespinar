@@ -1,6 +1,6 @@
 # laurenmaeespinar
 
-Portfolio of Lauren Mae Espinar: AI-integration web developer, full-stack developer and QA tester.
+Portfolio of Lauren Mae Espinar: web developer with full-stack, AI integration and QA experience.
 
 Live site: https://superwowers.github.io/laurenmaeespinar/
 

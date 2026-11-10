@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { projectSlides } from '../data/portfolioData';
+import { projectSlides, howItWorks } from '../data/portfolioData';
 
 const position = (index, active, total) => {
   const offset = (index - active + total) % total;
@@ -14,6 +14,7 @@ export default function Projects() {
   const total = projectSlides.length;
   const step = (d) => setActive((a) => (a + d + total) % total);
   const slide = projectSlides[active];
+  const howSteps = howItWorks.find((h) => h.id === slide.how)?.steps;
 
   return (
     <section id="projects">
@@ -56,7 +57,7 @@ export default function Projects() {
         </button>
       </div>
 
-      <div className="card cap2">
+      <div className="card cap2" key={slide.title}>
         <div className="badges">
           {slide.badges.map((b, i) => (
             <span key={b} className={`bd${i === 0 ? ' k' : ''}`}>
@@ -67,18 +68,34 @@ export default function Projects() {
         </div>
         <h3>{slide.title}</h3>
         <p>{slide.description}</p>
-        <div className="myrole">
-          <b>My role</b>
-          {slide.role}
-        </div>
-        <div className="stk">
-          {slide.stack.map(([label, value]) => (
-            <div key={label}>
-              <span>{label}</span>
-              {value}
+        <details className="more">
+          <summary>My role and stack</summary>
+          <div className="myrole">
+            <b>My role</b>
+            {slide.role}
+          </div>
+          <div className="stk">
+            {slide.stack.map(([label, value]) => (
+              <div key={label}>
+                <span>{label}</span>
+                {value}
+              </div>
+            ))}
+          </div>
+        </details>
+        {howSteps && (
+          <details className="more">
+            <summary>How it works</summary>
+            <div className="steps">
+              {howSteps.map(([title, text]) => (
+                <div className="step" key={title}>
+                  <b>{title}</b>
+                  <span>{text}</span>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </details>
+        )}
         <div className="acts">
           {slide.links.map((l, i) => (
             <a key={l.href} className={`btn${i ? ' g' : ''}`} href={l.href} target="_blank" rel="noreferrer">

@@ -10,24 +10,16 @@ export const LINKS = {
 
 export const personalInfo = {
   name: 'Lauren Mae Espinar',
-  status: '4th-year BSCS student · open to internships & junior roles',
-  headline: ['Aspiring AI-integration web developer', 'full-stack', 'system analyst', 'QA tester'],
-  tags: ['AI integration', 'Full-stack', 'System analysis', 'QA tester', 'Team lead'],
+  status: '4th-year BSCS student · open to internships',
+  headline: ['Web developer'],
   intro:
-    'I build web apps that think. Full-stack with React, Laravel and FastAPI, I weave AI into real products, then test them by hand until they hold up.',
-  facts: [
-    { label: 'Thesis project', value: 'ACES LMS', detail: 'Team lead · backend, database, AI, QA' },
-    { label: 'Sole developer', value: 'FitWise', detail: 'Frontend, backend and database' },
-    { label: 'Education', value: 'BS Computer Science', detail: '4th year · STI College Lucena' },
-    { label: 'Works with AI', value: 'Claude · Antigravity', detail: 'AI-assisted development' },
-  ],
+    'I build websites and web apps, from the frontend people see to the backend behind it. I add AI where it helps, and I test everything by hand until it holds up.',
 };
 
 export const sections = [
   { id: 'home', label: 'Home' },
-  { id: 'systems', label: 'Systems' },
   { id: 'projects', label: 'Projects' },
-  { id: 'skills', label: 'Stack' },
+  { id: 'skills', label: 'Skills' },
   { id: 'about', label: 'About' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -99,6 +91,7 @@ export const projectSlides = [
     image: B + 'images/aces-home.jpg',
     alt: 'ACES landing page',
     title: 'ACES LMS',
+    how: 'aces',
     badges: ['Thesis project', '4 role portals'],
     description:
       'Learning management system for a college: enrollment per semester, lessons, quizzes, a multi-step grade approval flow and permanent academic records.',
@@ -115,6 +108,7 @@ export const projectSlides = [
     image: B + 'images/aces-quiz-ai.jpg',
     alt: 'AI quiz generator',
     title: 'ACES · AI quiz generator',
+    how: 'quiz',
     badges: ['AI', 'Teacher portal'],
     description:
       'Teachers pick a quiz type (drag and drop, identification, multiple choice) and generate the questions with AI, then review them before use.',
@@ -130,6 +124,7 @@ export const projectSlides = [
     image: B + 'images/aces-interrogation.jpg',
     alt: 'AI suspect interrogation',
     title: 'ACES · AI suspect interrogation',
+    how: 'interrogation',
     badges: ['AI', 'Student portal'],
     description:
       'Students practise criminology investigation: choose a case type, read a unique Philippine case briefing in English or Tagalog, then interrogate suspects by chat or voice.',
@@ -145,6 +140,7 @@ export const projectSlides = [
     image: B + 'images/fitwise.jpg',
     alt: 'FitWise',
     title: 'FitWise · Virtual fitting room',
+    how: 'fitwise',
     badges: ['Sole developer', 'SDG 12'],
     description:
       'Estimates body measurements from a camera, renders a 3D mannequin and checks garment fit zone by zone against real brand size charts.',
@@ -157,6 +153,32 @@ export const projectSlides = [
     ],
     links: [{ label: 'GitHub ↗', href: 'https://github.com/superwowers/FITWISE' }],
   },
+  {
+    image: B + 'images/kryziah-invite.jpg',
+    alt: "Kryziah's First Birthday digital invitation, closed book cover",
+    title: "Digital invitation · Kryziah's 1st birthday",
+    badges: ['Personal project', 'Live'],
+    description:
+      'A fairy garden themed digital invitation I made for my niece. It opens like a storybook and walks guests through six pages: the celebrant, photos, a countdown with the event details and a map link, the dress code, a gift note and a sign-off.',
+    role: 'Designed and built the whole invitation, from the layout and the page-turn interaction to the content, and deployed it so guests could open it from a link.',
+    stack: [
+      ['Frontend', 'React · Vite'],
+      ['Features', 'Page-turn book · event countdown · add to calendar · map link'],
+      ['Hosting', 'Netlify'],
+    ],
+    links: [{ label: 'Live site ↗', href: 'https://kryziahs-1st-bday.netlify.app/' }],
+  },
+];
+
+/* ---------- Roles ---------- */
+export const GITHUB_USER = 'superwowers';
+
+export const roles = [
+  { name: 'Full-stack developer', what: 'Builds the database, the backend and the screens.', where: 'ACES LMS · FitWise · Digital invitation' },
+  { name: 'QA tester', what: 'Led quality assurance and tests every release by hand.', where: 'ACES LMS · PHPUnit, Vitest, ESLint, manual testing' },
+  { name: 'System analyst', what: 'Designed the enrollment process and the grading workflow.', where: 'ACES LMS' },
+  { name: 'AI integration', what: 'Connects AI to real features: quizzes, voice and vision.', where: 'AI quiz generator · AI interrogation · FitWise' },
+  { name: 'Team lead', what: 'Led the thesis team and split the work.', where: 'ACES LMS' },
 ];
 
 /* ---------- Tech stack ring ---------- */

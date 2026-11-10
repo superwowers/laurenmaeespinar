@@ -1,9 +1,10 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
 import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
-import HowItWorks from './components/HowItWorks';
 import Projects from './components/Projects';
 import TechStack from './components/TechStack';
+import Roles from './components/Roles';
+import GithubCalendar from './components/GithubCalendar';
 import About from './components/About';
 import Contact from './components/Contact';
 import { sections } from './data/portfolioData';
@@ -67,9 +68,10 @@ export default function App() {
         <Sidebar active={active} dark={dark} onNavigate={go} onToggleTheme={() => setDark((d) => !d)} />
         <main className="content" ref={contentRef} onScroll={spy}>
           <Hero onNavigate={go} />
-          <HowItWorks />
           <Projects />
+          <Roles />
           <TechStack />
+          <GithubCalendar />
           <About />
           <Contact />
           <footer>© Lauren Mae Espinar</footer>

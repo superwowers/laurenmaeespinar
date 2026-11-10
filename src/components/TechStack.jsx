@@ -22,7 +22,7 @@ export default function TechStack() {
   const current = techStack[active];
 
   return (
-    <section id="skills">
+    <section id="stack">
       <div className="eyebrow">
         <span>tech stack</span>
       </div>

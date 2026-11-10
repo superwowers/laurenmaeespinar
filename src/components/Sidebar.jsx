@@ -3,12 +3,6 @@ import { sections } from '../data/portfolioData';
 
 const icons = {
   home: <path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" />,
-  systems: (
-    <>
-      <path d="M12 3l9 5-9 5-9-5z" />
-      <path d="M3 13l9 5 9-5" />
-    </>
-  ),
   projects: (
     <>
       <rect x="3" y="4" width="18" height="16" rx="3" />
