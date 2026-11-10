@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { LINKS, GITHUB_USER } from '../data/portfolioData';
+import data from '../data/contributions.json';
 
 const SIZE = 11;
 const GAP = 3;
@@ -9,22 +10,8 @@ const TOP = 18;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 export default function GithubCalendar() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    let cancelled = false;
-    fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`)
-      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(r.status))))
-      .then((json) => !cancelled && setData(json))
-      .catch(() => {
-        /* offline or API down: the section stays hidden */
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, []);
-
-  if (!data || !data.contributions?.length) return null;
+  // Snapshot saved by scripts/fetch-contributions.mjs at deploy time.
+  if (!data.contributions?.length) return null;
 
   const days = data.contributions;
   const offset = new Date(days[0].date + 'T00:00:00').getDay();
@@ -85,7 +72,7 @@ export default function GithubCalendar() {
         </svg>
       </div>
       <div className="gfoot">
-        <span>{data.total?.lastYear?.toLocaleString()} contributions in the last year</span>
+        <span>{data.total.toLocaleString()} contributions in the last year</span>
         <span className="glegend">
           Less
           {[0, 1, 2, 3, 4].map((l) => (

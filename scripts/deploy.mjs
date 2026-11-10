@@ -11,6 +11,7 @@ const remoteUrl = read('git remote get-url pages');
 const name = read('git config user.name') || 'laurenmae';
 const email = read('git config user.email') || 'noreply@users.noreply.github.com';
 
+execSync('node scripts/fetch-contributions.mjs', { stdio: 'inherit' });
 execSync('npm run build', { stdio: 'inherit' });
 
 const tmp = mkdtempSync(join(tmpdir(), 'portfolio-deploy-'));
