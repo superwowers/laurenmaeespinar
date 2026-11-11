@@ -11,7 +11,7 @@ export const LINKS = {
 export const personalInfo = {
   name: 'Lauren Mae Espinar',
   status: '4th-year BSCS student · open to internships',
-  headline: ['Web developer'],
+  headline: ['Software engineer'],
   intro:
     'I build websites and web apps, from the frontend people see to the backend behind it. I add AI where it helps, and I test everything by hand until it holds up.',
 };
