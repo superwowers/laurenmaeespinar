@@ -11,7 +11,7 @@ export const LINKS = {
 export const personalInfo = {
   name: 'Lauren Mae Espinar',
   status: '4th-year BSCS student · open to internships',
-  headline: ['Software engineer'],
+  headline: ['Aspiring software engineer'],
   intro:
     'I build websites and web apps, from the frontend people see to the backend behind it. I add AI where it helps, and I test everything by hand until it holds up.',
 };
@@ -193,7 +193,7 @@ export const techStack = [
 
 /* ---------- About gallery ---------- */
 export const gallery = [
-  { src: B + 'images/beach.jpg', title: "Hi, I'm Lauren", caption: 'Aspiring full-stack developer and 4th-year BSCS student from the Philippines.', h: 280, ry: 26, pos: '42% center' },
+  { src: B + 'images/beach.jpg', title: "Hi, I'm Lauren", caption: 'Aspiring software engineer and 4th-year BSCS student from the Philippines.', h: 280, ry: 26, pos: '42% center' },
   { src: B + 'images/hirono.jpg', title: 'Hirono', caption: 'Hirono is my stress reliever.', h: 190, ry: 20, pos: 'center', w: 2.3 },
   { src: B + 'images/cooking.jpg', title: 'Cooking', caption: 'I love cooking, especially seafood dishes.', h: 160, ry: 10, pos: 'center 45%' },
   { src: B + 'images/dog-selfie.jpg', title: 'Dogs', caption: 'Dogs are my favorite company.', h: 160, ry: -10, pos: 'center 35%' },
