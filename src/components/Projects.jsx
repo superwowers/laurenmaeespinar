@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { projectSlides, howItWorks } from '../data/portfolioData';
 
 const position = (index, active, total) => {
@@ -13,6 +13,18 @@ export default function Projects() {
   const [active, setActive] = useState(0);
   const total = projectSlides.length;
   const step = (d) => setActive((a) => (a + d + total) % total);
+  const touchStart = useRef(null);
+  const onTouchStart = (e) => {
+    touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  };
+  const onTouchEnd = (e) => {
+    const s = touchStart.current;
+    touchStart.current = null;
+    if (!s) return;
+    const dx = e.changedTouches[0].clientX - s.x;
+    const dy = e.changedTouches[0].clientY - s.y;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
+  };
   const slide = projectSlides[active];
   const howSteps = howItWorks.find((h) => h.id === slide.how)?.steps;
 
@@ -21,7 +33,7 @@ export default function Projects() {
       <div className="eyebrow">
         <span>projects</span>
       </div>
-      <div className="l3d">
+      <div className="l3d" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         {projectSlides.map((s, i) => (
           <div
             key={s.title}

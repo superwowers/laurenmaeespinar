@@ -77,7 +77,7 @@
   .dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--ink)}
 
   /* laptop carousel */
-  .l3d{position:relative;height:260px;perspective:1500px;margin:6px 0 4px}
+  .l3d{touch-action:pan-y;position:relative;height:260px;perspective:1500px;margin:6px 0 4px}
   .lap{position:absolute;left:50%;top:16px;width:min(430px,58%);transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s;cursor:pointer}
   .lap[data-pos="0"]{transform:translateX(-50%) rotateY(0) scale(1);z-index:5;cursor:default}
   .lap[data-pos="1"]{transform:translateX(calc(-50% + 82%)) rotateY(-34deg) scale(.84);z-index:3;filter:brightness(.88)}
@@ -203,10 +203,10 @@ section{scroll-margin-top:0}
   .techring{margin:0 auto}
   .legend{justify-content:center}
   .cgrid{grid-template-columns:1fr}
-  .l3d{height:165px}
-  .lap{width:72%}
-  .lap[data-pos="1"]{transform:translateX(calc(-50% + 70%)) rotateY(-34deg) scale(.8)}
-  .lap[data-pos="-1"]{transform:translateX(calc(-50% - 70%)) rotateY(34deg) scale(.8)}
+  .l3d{height:190px}
+  .lap{width:90%}
+  .lap[data-pos="1"]{transform:translateX(calc(-50% + 62%)) rotateY(-34deg) scale(.78)}
+  .lap[data-pos="-1"]{transform:translateX(calc(-50% - 62%)) rotateY(34deg) scale(.78)}
   .gal{overflow-x:auto;margin:6px 0 0;padding-bottom:6px}
   .gi{min-width:112px}
   .gbox{height:240px}
