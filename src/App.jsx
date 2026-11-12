@@ -10,6 +10,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import TetrisEgg from './components/TetrisEgg';
 import ClickSound from './components/ClickSound';
+import MobileSoundToggle from './components/MobileSoundToggle';
 import { sections } from './data/portfolioData';
 
 const readTheme = () => {
@@ -113,6 +114,7 @@ export default function App() {
       </div>
       <TetrisEgg />
       <ClickSound enabled={soundOn} />
+      <MobileSoundToggle soundOn={soundOn} onToggle={() => setSoundOn((s) => !s)} />
     </div>
   );
 }
