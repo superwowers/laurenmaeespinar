@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { LINKS, GITHUB_USER } from '../data/portfolioData';
-import data from '../data/contributions.json';
+import fallbackData from '../data/contributions.json';
 
 const SIZE = 11;
 const GAP = 3;
@@ -10,7 +10,36 @@ const TOP = 18;
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 export default function GithubCalendar() {
-  // Snapshot saved by scripts/fetch-contributions.mjs at deploy time.
+  // Start from the snapshot saved by scripts/fetch-contributions.mjs, then
+  // try to refresh it live from the same public API on every visit.
+  const [data, setData] = useState(fallbackData);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
+      .then((json) => {
+        if (cancelled) return;
+        if (!Array.isArray(json.contributions) || json.contributions.length < 300) {
+          throw new Error('unexpected response shape');
+        }
+        setData({
+          fetchedAt: new Date().toISOString(),
+          total: json.total?.lastYear ?? json.contributions.reduce((n, d) => n + d.count, 0),
+          contributions: json.contributions.map(({ date, count, level }) => ({ date, count, level })),
+        });
+      })
+      .catch(() => {
+        /* live fetch failed: keep showing the bundled snapshot */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   if (!data.contributions?.length) return null;
 
   const days = data.contributions;
