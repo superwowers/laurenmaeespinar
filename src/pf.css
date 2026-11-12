@@ -108,8 +108,9 @@
   .more[open] summary{margin-bottom:12px}
   .myrole{font-size:12px;line-height:1.55;padding:10px 14px;border-radius:12px;background:var(--chip);margin:0 0 12px;max-width:640px}
   .myrole b{display:block;font:600 9.5px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:3px}
-  .stk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px 18px;margin:0 0 14px;font-size:11.5px;line-height:1.45}
-  .stk span{display:block;font:600 9.5px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:2px}
+  .stk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:8px;margin:0 0 14px;font-size:11.5px;line-height:1.45}
+  .stk>div{padding:10px 14px;border-radius:12px;background:var(--chip)}
+  .stk span{display:block;font:600 9.5px 'JetBrains Mono',monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);margin-bottom:3px}
 
   .hero2{text-align:center}
   .hero2 .avatar{width:150px;height:150px;border-radius:50%;margin:0 auto 18px;padding:5px;background:var(--card);border:1px solid var(--cardb);box-shadow:0 14px 34px var(--shadow)}
@@ -222,9 +223,16 @@ section{scroll-margin-top:0}
 .pf.dark .tswitch .knob{transform:translateX(28px)}
 .pf.dark .tswitch .sun{opacity:0}.pf.dark .tswitch .moon{opacity:1}
 .tswitch:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+/* ---------- Sound on/off button ---------- */
+.soundbtn{margin-top:8px;align-self:center;width:36px;height:32px;border-radius:10px;background:var(--chip);border:0;display:grid;place-items:center;cursor:pointer;color:var(--ink);flex:none}
+.soundbtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.soundbtn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
 .gi{min-width:0}
 @media (max-width:900px){
   .tswitch{margin:0 0 0 auto}
+  .soundbtn{margin:0 0 0 6px;width:32px;height:28px}
   .gi{min-width:112px}
 }
 
@@ -256,6 +264,8 @@ pre{overflow-wrap:anywhere}
   .pf.dark .tswitch .knob{transform:translateX(24px)}
   .tswitch svg{top:6px;width:14px;height:14px}
   .tswitch .sun{right:6px}.tswitch .moon{left:6px}
+  .soundbtn{width:28px;height:28px}
+  .soundbtn svg{width:14px;height:14px}
 }
 
 /* ---------- Contact: icon link cards ---------- */
@@ -272,11 +282,11 @@ pre{overflow-wrap:anywhere}
 /* ---------- Mobile: flat photo grid instead of the sideways 3D strip, tidy Gmail row ---------- */
 @media (max-width:900px){
   .gal{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:visible;margin:14px 0 0}
-  .gi,.gi.wide{flex:none !important;min-width:0}
-  .gi.wide{grid-column:1 / -1}
+  .gi,.gi.wide,.gi.mfull{flex:none !important;min-width:0}
+  .gi.wide,.gi.mfull{grid-column:1 / -1}
   .gbox{height:auto;display:block}
   .gp{width:100%;height:190px;transform:none;border-radius:16px}
-  .gi.wide .gp{height:170px}
+  .gi.wide .gp,.gi.mfull .gp{height:170px}
   .gl{margin-top:8px}
   .mail{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px}
   .mail .grow{min-width:0}
@@ -293,17 +303,15 @@ pre{overflow-wrap:anywhere}
   .gi:hover .gp,.gi.on .gp{transform:none;box-shadow:0 10px 24px var(--shadow)}
 }
 
-/* ---------- Phones: "How they work" steps become one vertical list ---------- */
-@media (max-width:700px){
-  .steps{grid-template-columns:minmax(0,1fr);gap:0}
-  .step{position:relative;background:transparent;border-radius:0;padding:0 0 18px 26px;font-size:14px;line-height:1.55;
-    font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
-  .step::before{content:"";position:absolute;left:0;top:5px;width:10px;height:10px;border-radius:50%;background:var(--ink)}
-  .step::after{content:"";position:absolute;left:4px;top:19px;bottom:-5px;width:2px;background:var(--line)}
-  .step:last-child{padding-bottom:0}
-  .step:last-child::after{display:none}
-  .step b{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:13px}
-}
+/* ---------- "How it works" steps: one vertical list, on every screen size ---------- */
+.steps{grid-template-columns:minmax(0,1fr);gap:0}
+.step{position:relative;background:transparent;border-radius:0;padding:0 0 18px 26px;font-size:14px;line-height:1.55;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+.step::before{content:"";position:absolute;left:0;top:5px;width:10px;height:10px;border-radius:50%;background:var(--ink)}
+.step::after{content:"";position:absolute;left:4px;top:19px;bottom:-5px;width:2px;background:var(--line)}
+.step:last-child{padding-bottom:0}
+.step:last-child::after{display:none}
+.step b{font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;font-size:13px}
 
 /* ---------- Light mode: selected tab and content share one solid color (same as dark mode) ---------- */
 .pf:not(.dark){--L:#fafbfc}
@@ -318,3 +326,12 @@ section.arrive>*{animation:arrive .6s cubic-bezier(.22,.8,.3,1) both}
 section.arrive>*:nth-child(2){animation-delay:.06s}
 section.arrive>*:nth-child(3){animation-delay:.12s}
 section.arrive>*:nth-child(n+4){animation-delay:.18s}
+
+/* ---------- Hidden Tetris easter egg (ctrl+shift+g) ---------- */
+.tetris-overlay{position:fixed;inset:0;z-index:9999;background:rgba(10,10,12,.6);display:flex;align-items:center;justify-content:center;padding:20px}
+.tetris-modal{position:relative;background:var(--solid);border:1px solid var(--cardb);border-radius:20px;padding:22px;box-shadow:0 24px 60px var(--shadow);display:flex;flex-direction:column;align-items:center;gap:12px;font-family:'JetBrains Mono',ui-monospace,Consolas,monospace;color:var(--ink)}
+.tetris-modal canvas{background:var(--chip);border-radius:12px;display:block}
+.tetris-modal .trow{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--mute)}
+.tetris-modal .trow button{padding:6px 14px;border-radius:10px;background:var(--btn);color:var(--btnt);font:600 11px 'JetBrains Mono',monospace;border:0;cursor:pointer}
+.tetris-hint{font-size:11px;color:var(--mute);text-align:center;max-width:240px;margin:0}
+.tetris-close{position:absolute;top:10px;right:10px;background:var(--chip);border:0;border-radius:50%;width:26px;height:26px;display:grid;place-items:center;cursor:pointer;color:var(--ink);font-size:16px;line-height:1}

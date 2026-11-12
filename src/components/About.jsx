@@ -12,13 +12,13 @@ export default function About() {
       </div>
       <h2>A little more about me.</h2>
       <p className="lead">
-        Outside of development, I collect Hirono figures, cook, take photographs and spend time with dogs.
+        Outside of development, I collect Hirono figures, cook and take photographs.
       </p>
       <div className="gal">
         {gallery.map((g, i) => (
           <div
             key={g.title}
-            className={`gi${i === active ? ' on' : ''}${g.w ? ' wide' : ''}`}
+            className={`gi${i === active ? ' on' : ''}${g.w ? ' wide' : ''}${g.mobileFull ? ' mfull' : ''}`}
             style={{ flex: g.w || 1 }}
             onMouseEnter={() => setActive(i)}
             onClick={() => setActive(i)}

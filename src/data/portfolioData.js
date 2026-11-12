@@ -128,11 +128,11 @@ export const projectSlides = [
     badges: ['AI', 'Student portal'],
     description:
       'Students practise criminology investigation: choose a case type, read a unique Philippine case briefing in English or Tagalog, then interrogate suspects by chat or voice.',
-    role: 'Co-developed with a teammate. Proposed the feature and implemented the voice interaction and the case story generation. AI usage tracking was developed by my teammate.',
+    role: 'Co-developed this with a friend — we built it together, including the voice interaction, case story generation and AI usage tracking.',
     stack: [
       ['AI', 'Google Gemini · speech-to-text · text-to-speech'],
       ['Backend', 'PHP 8.5 · Laravel 12 · MySQL 8'],
-      ['AI usage', 'Tracking and limits (developed by a teammate)'],
+      ['AI usage', 'Tracking and limits — built together with a friend'],
     ],
     links: [{ label: 'Live site ↗', href: LINKS.acesLive }],
   },
@@ -195,10 +195,9 @@ export const techStack = [
 export const gallery = [
   { src: B + 'images/beach.jpg', title: "Hi, I'm Lauren", caption: 'Aspiring software engineer and 4th-year BSCS student from the Philippines.', h: 280, ry: 26, pos: '42% center' },
   { src: B + 'images/hirono.jpg', title: 'Hirono', caption: 'Hirono is my stress reliever.', h: 190, ry: 20, pos: 'center', w: 2.3 },
-  { src: B + 'images/cooking.jpg', title: 'Cooking', caption: 'I love cooking, especially seafood dishes.', h: 160, ry: 10, pos: 'center 45%' },
-  { src: B + 'images/dog-selfie.jpg', title: 'Dogs', caption: 'Dogs are my favorite company.', h: 160, ry: -10, pos: 'center 35%' },
-  { src: B + 'images/husky.jpg', title: 'Photography', caption: 'I enjoy photographing nature and animals.', h: 220, ry: -20, pos: 'center' },
-  { src: B + 'images/cows.jpg', title: 'Quiet views', caption: 'Slow afternoons in the countryside.', h: 280, ry: -26, pos: 'center 60%' },
+  { src: B + 'images/cooking.jpg', title: 'Cooking', caption: 'I love cooking everyday dishes, mostly Filipino comfort food.', h: 160, ry: 10, pos: 'center 45%', mobileFull: true },
+  { src: B + 'images/husky.jpg', title: 'Photography', caption: 'I enjoy photographing nature and animals.', h: 170, ry: -20, pos: 'center', w: 1.6 },
+  { src: B + 'images/cows.jpg', title: 'Quiet views', caption: 'Slow afternoons in the countryside.', h: 280, ry: -26, pos: 'center 60%', mobileFull: true },
 ];
 
 /* ---------- Education & events ---------- */

@@ -8,6 +8,8 @@ import GithubCalendar from './components/GithubCalendar';
 import Education from './components/Education';
 import About from './components/About';
 import Contact from './components/Contact';
+import TetrisEgg from './components/TetrisEgg';
+import ClickSound from './components/ClickSound';
 import { sections } from './data/portfolioData';
 
 const readTheme = () => {
@@ -18,10 +20,27 @@ const readTheme = () => {
   }
 };
 
+const readSound = () => {
+  try {
+    return localStorage.getItem('pf-sound') !== 'off';
+  } catch {
+    return true;
+  }
+};
+
 export default function App() {
   const [dark, setDark] = useState(readTheme);
+  const [soundOn, setSoundOn] = useState(readSound);
   const [active, setActive] = useState(sections[0].id);
   const contentRef = useRef(null);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('pf-sound', soundOn ? 'on' : 'off');
+    } catch {
+      /* storage unavailable: sound preference simply isn't remembered */
+    }
+  }, [soundOn]);
 
   useEffect(() => {
     try {
@@ -72,7 +91,14 @@ export default function App() {
   return (
     <div className={`pf${dark ? ' dark' : ''}`}>
       <div className="shell">
-        <Sidebar active={active} dark={dark} onNavigate={go} onToggleTheme={() => setDark((d) => !d)} />
+        <Sidebar
+          active={active}
+          dark={dark}
+          onNavigate={go}
+          onToggleTheme={() => setDark((d) => !d)}
+          soundOn={soundOn}
+          onToggleSound={() => setSoundOn((s) => !s)}
+        />
         <main className="content" ref={contentRef} onScroll={spy}>
           <Hero onNavigate={go} />
           <Projects />
@@ -85,6 +111,8 @@ export default function App() {
           <footer>© Lauren Mae Espinar</footer>
         </main>
       </div>
+      <TetrisEgg />
+      <ClickSound enabled={soundOn} />
     </div>
   );
 }

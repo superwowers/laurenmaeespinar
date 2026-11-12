@@ -41,6 +41,7 @@ export default function TechStack() {
                     <path
                       d={arc(a0, a1, 158, 108)}
                       className={`seg${i === active ? ' on' : ''}`}
+                      role="button"
                       onClick={() => setActive(i)}
                     >
                       <title>{t.name}</title>
