@@ -77,17 +77,14 @@
   .dots{display:flex;gap:6px}.dots i{width:7px;height:7px;border-radius:50%;background:var(--line)}.dots i.on{background:var(--ink)}
 
   /* laptop carousel */
-  .l3d{position:relative;height:300px;perspective:1500px;margin:6px 0 4px}
+  .l3d{position:relative;height:260px;perspective:1500px;margin:6px 0 4px}
   .lap{position:absolute;left:50%;top:16px;width:min(430px,58%);transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s;cursor:pointer}
   .lap[data-pos="0"]{transform:translateX(-50%) rotateY(0) scale(1);z-index:5;cursor:default}
   .lap[data-pos="1"]{transform:translateX(calc(-50% + 82%)) rotateY(-34deg) scale(.84);z-index:3;filter:brightness(.88)}
   .lap[data-pos="-1"]{transform:translateX(calc(-50% - 82%)) rotateY(34deg) scale(.84);z-index:3;filter:brightness(.88)}
   .lap[data-pos="h"]{transform:translateX(-50%) scale(.7);z-index:1;opacity:0;pointer-events:none}
-  .lscr{background:#16171a;border-radius:14px 14px 4px 4px;padding:9px 9px 11px;box-shadow:0 24px 40px var(--shadow),inset 0 0 0 1px rgba(255,255,255,.12)}
-  .lscr div{aspect-ratio:2/1;background:#fff;border-radius:4px;overflow:hidden}
-  .lscr img{width:100%;height:100%;object-fit:contain;display:block}
-  .lbase{height:11px;width:112%;margin:0 -6%;background:linear-gradient(#cfd3da,#8d939e);border-radius:0 0 18px 18px;box-shadow:0 14px 20px var(--shadow)}
-  .lbase::after{content:"";display:block;width:16%;height:4px;margin:0 auto;background:rgba(0,0,0,.25);border-radius:0 0 6px 6px}
+  .lscr{aspect-ratio:2/1;background:#fff;border-radius:16px;overflow:hidden;border:1px solid var(--cardb);box-shadow:0 22px 44px var(--shadow)}
+  .lscr img{width:100%;height:100%;object-fit:cover;display:block}
   .cap2{padding:20px 22px;margin-top:20px}
   .cap2 h3{margin:10px 0 4px;font-size:21px;letter-spacing:-.01em}.cap2 p{margin:0 0 12px;font-size:13px;line-height:1.6;color:var(--mute);max-width:640px}
   .cap2 .badges{display:flex;gap:6px;flex-wrap:wrap}.cap2 .chips{margin-bottom:14px}
@@ -206,7 +203,7 @@ section{scroll-margin-top:0}
   .techring{margin:0 auto}
   .legend{justify-content:center}
   .cgrid{grid-template-columns:1fr}
-  .l3d{height:210px}
+  .l3d{height:165px}
   .lap{width:72%}
   .lap[data-pos="1"]{transform:translateX(calc(-50% + 70%)) rotateY(-34deg) scale(.8)}
   .lap[data-pos="-1"]{transform:translateX(calc(-50% - 70%)) rotateY(34deg) scale(.8)}

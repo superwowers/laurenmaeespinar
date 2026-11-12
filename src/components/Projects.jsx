@@ -34,11 +34,8 @@ export default function Projects() {
             onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setActive(i)}
           >
             <div className="lscr">
-              <div>
-                <img src={s.image} alt={s.alt} loading="lazy" />
-              </div>
+              <img src={s.image} alt={s.alt} loading="lazy" />
             </div>
-            <div className="lbase"></div>
           </div>
         ))}
       </div>
